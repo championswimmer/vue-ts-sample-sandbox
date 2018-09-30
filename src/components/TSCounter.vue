@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>TS Counter</h3>
-    <div>{{count}}</div>
+    <div>{{count}} is {{isOdd}}</div>
     <div>
     <button @click="increment()">INCREMENT</button>
     </div>
@@ -16,5 +16,8 @@ import Component from 'vue-class-component'
 export default class Counter extends Vue {
   count = 0
   increment() { this.count++ }
+  get isOdd() {
+    return (this.count%2 === 0) ? 'even' : 'odd'
+  }
 }
 </script>
