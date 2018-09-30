@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>JS Counter</h3>
-    <div>{{count}}</div>
+    <div>{{count}} is {{isOdd}}</div>
     <div>
     <button @click="increment()">INCREMENT</button>
     </div>
@@ -18,6 +18,11 @@ export default  {
   methods: {
     increment() {
       this.count++
+    }
+  },
+  computed: {
+    isOdd() {
+      return (this.count%2 === 0) ? 'even' : 'odd'
     }
   }
 }
